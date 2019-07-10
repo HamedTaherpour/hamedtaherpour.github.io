@@ -1,0 +1,92 @@
+@import url(config.css);
+
+body {
+    overflow-x: hidden;
+    background-color: var(--color-primary-dark);
+}
+
+h1, h2, h3, h4 {
+    font-weight: lighter;
+    font-size: 25px;
+    text-align: center;
+}
+
+h1 {
+    color: var(--color-title);
+    font-weight: normal;
+}
+
+h4, h2, .blockquote-footer cite {
+    color: var(--color-text);
+}
+
+.center {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#avatar img {
+    width: 200px;
+    border: 4px solid transparent;
+    border-radius: 50%;
+    background: linear-gradient(var(--color-accent-dark), var(--color-accent));
+    background-clip: padding-box;
+    padding: 8px;
+    /* just to show box-shadow still works fine */
+    -webkit-box-shadow: 0px 0px 40px 10px var(--color-primary);
+    -moz-box-shadow: 0px 0px 40px 10px var(--color-primary);
+    box-shadow: 0px 0px 40px 10px var(--color-primary);
+}
+
+#contact .circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: var(--color-primary-dark);
+    background-color: white;
+    /* just to show box-shadow still works fine */
+    -webkit-box-shadow: 0px 0px 20px 5px var(--color-primary);
+    -moz-box-shadow: 0px 0px 20px 5px var(--color-primary);
+    box-shadow: 0px 0px 20px 5px var(--color-primary);
+    text-decoration: none;
+}
+
+#contact .fi {
+    font-size: 20px;
+}
+
+#work p {
+    font-size: 15px;
+}
+
+#work .blockquote-footer {
+    color: var(--color-accent);
+    font-size: 12px;
+}
+
+#skills, #work {
+    background-color: var(--color-primary);
+}
+
+#skills .bd-highlight {
+    background-color: var(--color-accent-light);
+    margin: 3px;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -ms-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+}
+
+#skills .bd-highlight h3 {
+    color: var(--color-title);
+    cursor: default;
+    font-size: 12px;
+    font-weight: normal;
+    margin: 0px;
+}
+
+#skills .bd-highlight:hover {
+    background-color: var(--color-primary-dark);
+}
