@@ -16,7 +16,7 @@ h1 {
     font-weight: normal;
 }
 
-h4, h2, .blockquote-footer cite {
+h2, h3, h4, .blockquote-footer cite {
     color: var(--color-text);
 }
 
