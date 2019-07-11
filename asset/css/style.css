@@ -60,16 +60,16 @@ h2, h3, h4, .blockquote-footer cite {
     font-size: 20px;
 }
 
-#work p {
+#work p, #about-me p {
     font-size: 15px;
 }
 
-#work .blockquote-footer {
+#work .blockquote-footer, #about-me .blockquote-footer {
     color: var(--color-accent);
     font-size: 12px;
 }
 
-#skills, #work {
+#skills, #work, #about-me {
     background-color: var(--color-primary);
 }
 
