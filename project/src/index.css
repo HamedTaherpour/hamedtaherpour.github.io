@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a.text-link {
+  @apply inline-flex z-10 relative px-1 no-underline;
+}
+
+a.text-link::before {
+  @apply w-full h-full absolute left-0 bottom-0 -rotate-6 origin-bottom-left;
+  content: "";
+  z-index: -1;
+  background-image: linear-gradient(
+    to top,
+    #22d3ee70 25%,
+    rgba(0, 0, 0, 0) 40%
+  );
+}
+
+a.text-link:hover {
+  @apply opacity-90;
+}
+
+a.text-link:hover::before {
+  @apply w-0;
+  transition-duration: 0.15s;
+}
