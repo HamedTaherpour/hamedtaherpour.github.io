@@ -39,8 +39,6 @@
             I'm a front-end
             <img class="w-5 inline-block" src="/public/img/vue_logo.png" />
             developer at
-            <a href="https://majaziland.me" class="text-link" target="_blank">Majaziland</a>
-            &nbsp;
             <a href="https://arzdigital.com" class="text-link" target="_blank">ArzDigital</a>
             <br />
             I <span class="mr-1 text-rose-500 font-semibold">love ♥</span>
