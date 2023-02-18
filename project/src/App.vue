@@ -3,33 +3,13 @@
     <div class="h-full flex flex-col justify-center">
       <div
         id="profile"
-        class="
-          flex flex-col
-          md:p-4
-          md:flex-row
-          md:items-center
-          md:justify-center
-          md:gap-x-4
-        "
+        class="flex flex-col md:p-4 md:flex-row md:items-center md:justify-center md:gap-x-4"
       >
         <img
           src="/img/avatar.jpg"
           title="This is me"
           alt="Hamed Taherpour"
-          class="
-            block
-            mx-auto
-            md:mx-px
-            w-52 md:w-56
-            h-52
-            rounded-full
-            md:rounded-none
-            object-cover
-            transform
-            transition
-            hover:rotate-3
-            duration-300
-          "
+          class="block mx-auto md:mx-px w-52 md:w-56 h-52 rounded-full md:rounded-none object-cover transform transition hover:rotate-3 duration-300"
         />
         <div class="p-4">
           <h1 class="text-2xl font-medium">
@@ -39,10 +19,14 @@
             I'm a front-end
             <img class="w-5 inline-block" src="/public/img/vue_logo.png" />
             developer at
-            <a href="https://arzdigital.com" class="text-link" target="_blank">ArzDigital</a>
+            <a href="https://arzdigital.com" class="text-link" target="_blank"
+              >ArzDigital</a
+            >
             <br />
             I <span class="mr-1 text-rose-500 font-semibold">love ♥</span>
-            <a href="https://tailwindcss.com/" class="text-link" target="_blank">Tailwindcss</a>
+            <a href="https://tailwindcss.com/" class="text-link" target="_blank"
+              >Tailwindcss</a
+            >
           </h3>
           <div class="flex flex-wrap justify-start items-center gap-x-4 mt-5">
             <a
@@ -50,12 +34,7 @@
               href="https://join.skype.com/invite/iZ84fXhcShAo"
               target="_blank"
             >
-              <img
-                class="w-6"
-                src="/img/skype.png"
-                alt="skype"
-                title="skype"
-              />
+              <img class="w-6" src="/img/skype.png" alt="skype" title="skype" />
             </a>
             <a
               class="transform transition hover:rotate-12 hover:scale-110"
