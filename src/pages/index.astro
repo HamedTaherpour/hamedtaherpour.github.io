@@ -1,0 +1,40 @@
+---
+import { SITE, SKILLSSHOWCASE_CONFIG, SOCIAL_LINKS } from '~/config.ts'
+import { GITHUB_CONFIG, POSTS_CONFIG } from '~/config.ts'
+import Layout from '~/layouts/Layout.astro'
+import SectionDivider from '~/components/base/SectionDivider.astro'
+import GithubContributions from '~/components/base/GithubContributions.tsx'
+import SocialLink from '~/components/base/SocialLink.astro'
+import List from '~/components/posts/card/List.astro'
+import SkillsShowcase from '~/components/base/SkillsShowcase.astro'
+import { getNumPosts, getPinnedPosts } from '~/lib/data'
+import githubContributions from '~/data/github-contributions.json'
+
+const { ENABLED, GITHUB_USERNAME, TOOLTIP_ENABLED } = GITHUB_CONFIG
+const { size, type } = POSTS_CONFIG.homePageConfig
+const { SKILLS_ENABLED, SKILLS_DATA } = SKILLSSHOWCASE_CONFIG
+const pinnedPosts = await getPinnedPosts()
+const hasPinnedPosts = pinnedPosts.length > 0
+const showPosts = hasPinnedPosts ? pinnedPosts : await getNumPosts(size)
+---
+
+<Layout title="خانه" description={SITE.description}>
+  <div class="relative z-[1]">
+    <section class="py-10 pb-12 px-6 sm:px-8">
+      <div class="flex flex-col-reverse sm:flex-row items-start gap-6 sm:gap-8">
+        <div class="grow">
+          <p class="text-muted-foreground text-sm mb-3">سلام، من</p>
+          <h1 class="text-4xl sm:text-5xl tracking-tight">حامد طاهرپور</h1>
+          <p class="text-muted-foreground font-light text-xl sm:text-2xl mt-3 text-balance">تازه در مسیر یادگیری توسعه فرانت‌اند</p>
+          <div class="pro text-muted-foreground text-pretty mt-6"><p>به‌تازگی به تیم <a href="https://discount-mixer.com/" target="_blank" rel="noreferrer">Discount Mixer</a> پیوسته‌ام و در کنار تیم روی بخش فرانت‌اند اپلیکیشن‌های Shopify یاد می‌گیرم و کار می‌کنم. هنوز در ابتدای مسیرم و اینجا یادداشت‌ها، تجربه‌ها و چیزهایی را که در مسیر یاد می‌گیرم ثبت می‌کنم.</p></div>
+          <div class="mt-6 flex gap-6">{SOCIAL_LINKS.map((item) => <SocialLink href={item.url} icon={item.icon} aria-label={`لینک ${item.name}`} count={item.count} label="دنبال‌کننده" />)}</div>
+        </div>
+        <img src="/images/avatar.jpg" alt="حامد طاهرپور" class="w-28 h-28 sm:w-36 sm:h-36 rounded-3xl object-cover shadow-sm border border-border/60" />
+      </div>
+    </section>
+    {ENABLED && <><SectionDivider /><section class="py-8 pb-10 px-6 sm:px-8"><div class="px-2 max-md:px-0"><h2 class="text-2xl sm:text-3xl">فعالیت در گیت‌هاب</h2><p class="text-muted-foreground mb-6 mt-1">{githubContributions.total.lastYear ? `${new Intl.NumberFormat('fa-IR').format(githubContributions.total.lastYear)} مشارکت در یک سال گذشته` : 'ردپای من در یک سال گذشته'}</p></div><GithubContributions username={GITHUB_USERNAME} tooltipEnabled={TOOLTIP_ENABLED} initialData={githubContributions} client:load transition:animate="none" /></section></>}
+    {SKILLS_ENABLED && SKILLS_DATA.length > 0 && <><SectionDivider /><section class="py-8 pb-10 px-6 sm:px-8"><div class="px-2 max-md:px-0"><h2 class="text-2xl sm:text-3xl tracking-tight">ابزارها و مهارت‌ها</h2><p class="text-muted-foreground mb-6 mt-1">چیزهایی که هر روز با آن‌ها کار می‌کنم</p></div><SkillsShowcase skillsData={SKILLS_DATA} /></section></>}
+    <SectionDivider />
+    <section class="py-8 pb-10 px-6 sm:px-8"><h2 class="text-2xl sm:text-3xl tracking-tight">آخرین نوشته‌ها</h2><p class="text-muted-foreground mb-6 mt-1">{hasPinnedPosts ? 'نوشته‌های منتخب' : 'تازه‌ترین یادداشت‌ها'}</p><List posts={showPosts} {type} coverLayout={POSTS_CONFIG.homePageConfig?.coverLayout} /></section>
+  </div>
+</Layout>
